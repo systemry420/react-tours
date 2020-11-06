@@ -51,11 +51,20 @@
   padding: 0;
 }
 
+.ruler {
+  background-color: rgba(0, 0, 255, 0.7);
+  margin: 10px 0;
+  height: 5px;
+  display: block;
+  width: 100px;
+}
 
 .tour {
   width: 50%; 
   margin: 1em 0;
   border: 1px solid #999;
+  box-shadow: 0 0 11px 2px gray;
+  border-radius: 11px;
 }
 
 .tour .info1 {
@@ -79,7 +88,7 @@
 }
 
 .price {
-  padding: .2em;
+  padding: .3em;
   margin: .5em;
   border-radius: 5px;
   background-color: rgb(162, 162, 255);
@@ -91,5 +100,6 @@
   margin: 5px;
   cursor: pointer;
   color: blue;
+  font-weight: bold;
   outline-width: 0;
 }
