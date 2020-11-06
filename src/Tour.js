@@ -12,15 +12,12 @@ const Tour = ({id, name, image, info, price}) => {
                 <img src={image} alt={name} />
             </div>
             <div className="info1">
-                <span className=''>
-                    hello
-                </span>
                 <span className="price">
                     {price} $
                 </span>
             </div>
             <div className="info2">
-                <p>
+                <div>
                     {readMore? (
                         <div>
                             {info}
@@ -32,7 +29,7 @@ const Tour = ({id, name, image, info, price}) => {
                             <button onClick={()=> setReadMore(!readMore)}>Read More</button>
                         </div>
                     )}
-                </p>
+                </div>
             </div>
         </div>
      );

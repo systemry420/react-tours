@@ -5,6 +5,7 @@ import Tour from './Tour'
 const url = "https://course-api.netlify.app/api/react-tours-project"
 
 function App() {
+  const [isLoading, setIsLoading] = useState(false)
   const [tours, setTours] = useState([
     {
       id:1,
@@ -18,7 +19,7 @@ function App() {
       price: '222'
     },
     {
-      id:1,
+      id:2,
       name: "abc",
       info: `src/App.js
       Line 1:26:   'useEffect' is defined but never used           no-unused-vars
@@ -31,26 +32,36 @@ function App() {
   ])
       
     const fetchData = () => {
+      setIsLoading(true)
         fetch(url)
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            // setTours(data)
+            setTours(data)
+            setIsLoading(false)
         })
     }
 
-    // useEffect(() => {
-    //   // fetchData()
-    // }, []);
+    useEffect(() => {
+      fetchData()
+    }, []);
 
 
   return (
-    <div className="App">
-      <h1>Our Tours</h1>
-      <div className="ruler"></div>
-      {tours.map(tour=>{
-        return <Tour {...tour} key={tour.id}/>
-      })}
+    <div>
+      {isLoading? (
+          <h1 style={{textAlign:"center"}}>
+            Loading ...
+          </h1>
+      ):(
+        <div className="App">
+          <h1>Our Tours</h1>
+            <div className="ruler"></div>
+            {tours.map(tour=>{
+              return <Tour {...tour} key={tour.id}/>
+            })}
+        </div>
+      )}
     </div>
   );
 }
