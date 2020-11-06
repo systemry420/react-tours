@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import Tour from './Tour'
+import logo from'./logo.svg'
 
 const url = "https://course-api.netlify.app/api/react-tours-project"
 
@@ -50,9 +51,12 @@ function App() {
   return (
     <div>
       {isLoading? (
-          <h1 style={{textAlign:"center"}}>
-            Loading ...
-          </h1>
+          <div className="App-header">
+            <img src={logo} alt="logo" className="App-logo" />
+            <h1 style={{textAlign:"center"}}>
+              Loading ...
+            </h1>
+          </div>
       ):(
         <div className="App">
           <h1>Our Tours</h1>
