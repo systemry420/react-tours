@@ -85,3 +85,11 @@
   background-color: rgb(162, 162, 255);
   color: rgb(0, 0, 153);
 }
+
+.info2 button {
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+  color: blue;
+  outline-width: 0;
+}
